@@ -1,12 +1,20 @@
 const express = require('express');
-const port = 8000;
+const port = 7000;
 const path = require('path');
 const app = express();
 
-app.use('/',require('./Routes/home')); 
+//adding route middleware
+app.use('/',require('./Routes/homeRouter'));
+
+//adding static middleware for css and js  
+app.use(express.static('Assets'));
+
+//added view engine setup
 app.set('view engine','ejs');
 app.set('Views',path.join(__dirname,'Views'));
 
+
+//added server listener
 app.listen(port,function(err){
 if(err)
 {
