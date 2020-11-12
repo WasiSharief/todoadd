@@ -5,9 +5,104 @@
                 <%= title %>
         </title>
         <link rel="stylesheet" type="text/css" href="/CSS/homeStyle.css"> 
+        <script src="https://kit.fontawesome.com/0353bbb956.js" crossorigin="anonymous"></script>
+        
     </head>
     <body>
-        <h1>This is first views file Controller</h1>
+        <!-- main form to collect data and send it to server and database -->
+        <form action="add/?taskname?taskdate?tasktype" method="GET">
+
+            <!-- getting discription from user and storing it -->
+            <div class="main-outer-div" placeholder="hellow">
+                <h1>TODO App</h1>
+                <div class="description-div">
+                <p>DESCRIPTION</p>
+                <input name="taskname" id="desc-input-id" type="text" maxlength="80" placeholder="What do you need to do?">
+                </div>
+                
+                <!-- getting the category with dropdown div  -->
+                <div id="category">
+                <p>CATEGORY</p>
+            
+                <input type="text" max="10" placeholder="Choose type" name="tasktype" id="cat-dropdown">
+
+                <a id="drop-click">
+                    <i class="fas fa-caret-down"></i>
+                </a>
+                <!-- category dropdown list -->
+                <div id="drop-options" class="drop-options">
+                    <span class="options">Personal</span>
+                    <span class="options" >Work</span>
+                    <span class="options">School</span>
+                    <span class="options">Cleaning</span>
+                    <span class="options lastoption">Other</span>
+                </div>
+            </div>
+                        <!-- getting date from user it will be disabled until category is selected -->
+            <div id="date">
+                <p>DUE DATE</p><br>
+                <input name="taskdate"  disabled type="date" min="10-11-2020"  id="date-input">
+            </div>
+            <div class="button-div">
+
+                <!-- to add a task by filling all the details -->
+            <button type="submit" class="buttons btn-add-color" id="add-task-btn">
+                <a><i class="fas fa-plus-circle"></i></a>&nbsp;
+                ADD TASK
+            </button>
+                    <!-- deleting task from list of tasks by selecting it, a request is sent to server with list no -->
+            <button type="button" onclick="location.href='/remove/'"  class="buttons btn-rem-color" id="rem-task-btn">
+                <a><i class="fas fa-trash"></i></a>&nbsp;
+                DELETE TASK
+            </button>
+        </div>
+        <!-- task lists of added tasks -->
+        <div class="tasks-div">
+                    <ul>
+                        <!-- for loop to fetch list of tasks from database object array -->
+                        <% var j=0 %>
+                        <% for (let i of taskdetail){%>
+                            <li>
+                                <!-- check box to delete a task is implimented here it interacts with server and sends no -->
+                                <div class="Task-class" >
+                                        <a href="/send/?id=<%= i.id%>">
+                                    <div class="checkbox">
+                                        <i class="fas fa-check tick"></i>
+                                    </div></a>
+                                    <!-- contains task details date and discription  -->
+                                    <div class="task-details">
+                                        
+                                            <p><%=i.taskname%></p>
+                                            <% var year="",month="",day=""; %>
+                                            <% for(let y=0;y<4;y++){%>
+                                            <%   year += i.tasktype[y]}%>
+                                                
+                                            <% for(let y=5;y<7;y++){%>
+                                            <%   month += i.tasktype[y]}%>
+                                            <%if(month==01){month=1;}else if(month==02){month=2;}else if(month==03){month=3;}else if(month==04){month=4;}else if(month==05){month=5;}else if(month==06){month=6;}else if(month==07){month=7;}else if(month==08){month=8;}else if(month==09){month=9;}%>
+                                                
+                                        <% var months = ["","jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]%>
+                                            <% for(let y=8;y<10;y++){%>
+                                            <%   day += i.tasktype[y]}%>
+                                        <small><p id="task-date"><i class="far fa-calendar-alt"></i>&nbsp;<%=day%>/<%=months[month]%>/<%=year%> </p></small>
+                                    </div>
+
+                                    <!-- task type is fetched from server and displayed -->
+                                    <div id="task-type" class="category-label labelcolor<%=j%>">
+                                        <%= i.taskdate%>
+                                    </div>
+                                </div> 
+                            </li>
+                            <% if (j==3){j=0;%>
+                            <%}else{j++;}%>
+                            
+                            <%}%>
+                    </ul>
+                </div>
+                    </div>
+                </form>
+                    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="/JS/homeJScode.js"></script>
+       
     </body>
 </html>

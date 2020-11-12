@@ -1,5 +1,6 @@
+const db = require('./Config/dbsetting');
 const express = require('express');
-const port = 7000;
+const port = 8000;
 const path = require('path');
 const app = express();
 

@@ -1,6 +1,292 @@
 body{
-    background-color: midnightblue;
+    margin: 0;
+    background-color: rgb(110, 66, 66);
+    
+    height: 100%;
 }
+/* ---------------------------------main outer div with discription-------------------------------------------------- */
 h1{
     color:green;
+    display: inline-block;
+    margin-left: 40%;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 35px;
+    font-weight: 500;
+    color:grey;
 }
+
+.main-outer-div{
+    width: 55%;
+    height: 650px;
+    background-color: white;
+    margin-left: 23%;
+    
+}
+.description-div{
+    margin-top: -2%;
+    width: 100%;
+    height: 80px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.description-div>p{
+    margin-left: 3%;
+    margin-top: 1%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(104, 102, 102);
+    font-weight: 540;
+}
+#desc-input-id{
+    margin-top: -4%;
+    width: 90%;
+    height: 25px;
+    background-color: transparent;
+    margin-left: 3%;
+    font-size: 18px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 0px solid transparent;
+    outline: 0px solid;
+    
+}
+h1{
+    
+    background: -webkit-linear-gradient(rgb(184, 11, 11),  rgb(65, 57, 68));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+::-webkit-input-placeholder { 
+    color: rgb(110, 66, 66);
+}
+/* -----------------------------------category dropdown divs css styles --------------------------------------------------------------------- */
+#category{
+    display: inline-block;
+    height: 80px;
+    width: 50%;
+    border-right: 1px solid rgb(100, 97, 97);
+    border-bottom: 1px solid rgb(100, 97, 97);
+}
+#category>p{
+    margin-top: 1%;
+    margin-left: 6%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(104, 102, 102);
+    
+}
+
+#cat-dropdown{
+    width: 90%;
+    height: 30px;
+    background-color:transparent;
+    border: 0px solid transparent;
+    font-size: 19px;
+    outline: 0px solid transparent;
+    margin-left: 5%;
+    color:rgb(104, 102, 102) ;
+    margin-top: -2%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#cat-dropdown>a{
+ 
+    font-size: 25px;
+    display: inline-block;
+    margin-top: -1%;  
+}
+
+.drop-options{
+    width: 27.3%;
+    height: fit-content;
+    margin-left: 0%;
+    background-color: white;
+    border: 1.5px solid purple;
+    visibility: hidden;
+    margin-top: 1%;
+    z-index: 2!important;
+    position: absolute;
+    color: rgb(100, 95, 95);
+}
+.hideclass{
+    visibility: visible;
+z-index: 1;
+}
+.options{
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    font-size: 20px;
+    text-indent: 20px;
+    padding-bottom: 5px;
+    border-bottom: 0.2px solid purple;
+    
+}
+.description-div:hover,#category:hover,#date:hover,#date-input:hover{
+    background-color: rgb(209, 214, 221)!important;
+}
+.options:hover{
+    background-color: purple;
+}
+.lastoption{
+    border: 0px solid transparent;
+}
+#drop-click{
+    position: relative;
+    margin-left: 90%;
+    margin-top: -7%;
+    display: block;
+    font-size: 23px;
+}
+/* -------------------------------------------date fileds and divs style---------------------------------------------------------------------------- */
+#date{
+    display: block;
+    height: 80px;
+    width: 49.6%;
+    background-color: white;
+    margin-top: -80.5px;
+    margin-left: 50%;
+    position: relative;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+}
+#date>p{
+    display: inline-block;
+    margin-top: 1%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(99, 95, 95);
+    margin-left: 5%;
+}
+
+#date-input{
+  
+    margin-left: 5%;
+    font-size: 20px;
+    color: rgb(97, 93, 93);
+    margin-top: -2%;
+    border: 0px solid;
+    outline: transparent;
+    background-color: transparent;
+    
+}
+/* ----------------------------------------------add and remove buttons style----------------------------------------------------------------- */
+.button-div{
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.buttons{
+    position: relative;
+    width: 25%;
+    height: 60px;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 20px;
+    z-index: 0;
+    border: 0px solid;
+    color: white;
+    border-radius: 5px;
+}
+.btn-rem-color{
+    background-color: rgb(184, 11, 11);
+}
+.btn-add-color{
+    background-color: rgb(65, 57, 68);
+}
+.btn-add-color>a{
+    font-size: 25px;
+}
+.btn-rem-color>a{
+    font-size: 25px;
+}
+/* -------------------------------------------list of todo tasks styling-------------------------------------------------------- */
+.Task-class{
+    margin-top: -2%;
+    margin-left: -5%;
+    width: 105%;
+    height: 100px;
+    background-color: white;
+    border-bottom: 0px solid grey;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul{
+    list-style: none;
+}
+.tasks-div::-webkit-scrollbar {
+    display: none;
+  }
+.tasks-div{
+    width: 100%;
+    height: 320px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(95, 91, 91);
+    background-color: rgb(110, 66, 66)!important;
+    overflow-y: scroll;
+    margin-top: 0%;
+}
+.checkbox{
+    width: 25px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 3px solid grey;
+    margin-left: 4%;
+    text-align: center;
+    padding-top: 5px;
+}
+.Task-class>a{
+    margin-left: 4%;
+}
+.check{
+    background-color: rgb(226, 9, 9);
+}
+
+.tick{
+    color: white;
+}
+.task-details{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    margin-left: -45%;
+    margin-top: -6%;
+}
+
+.task-details>p{
+    height:15px;
+    font-size: 23px;
+    font-weight: bold;
+}
+.category-label{
+    width: 100px;
+    height: 50px;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.labelcolor0{
+    background-color: rgb(4, 92, 48);
+}
+.labelcolor1{
+    background-color: rgb(10, 10, 110);
+}
+.labelcolor2{
+    background-color: indigo;
+}
+.labelcolor3{
+    background-color: rgb(163, 12, 126);
+}
+/* --------------------------------------------------------------- */
+    
+    
