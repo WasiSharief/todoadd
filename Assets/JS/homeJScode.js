@@ -12,7 +12,7 @@ var checks = document.getElementsByClassName('checkbox');
     });
 }
 // script for selecting category from dropdown 
-setInterval(function(){
+
 for(let i=0;i<option.length;i++)
 {
             option[i].addEventListener('mousedown',function(){
@@ -22,7 +22,7 @@ for(let i=0;i<option.length;i++)
        
             });
 }
-},500);
+
 
 // hidding the dropdown on click and displaying it 
 $('#drop-click').click(function(){

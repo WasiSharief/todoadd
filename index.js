@@ -1,3 +1,4 @@
+// including all the modules such as databse,server and path 
 const db = require('./Config/dbsetting');
 const express = require('express');
 const port = 8000;
